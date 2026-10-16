@@ -1,0 +1,345 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>TelinhaFix - compartilhe sua tela com os amigos</title>
+  <meta name="description" content="App grátis pra Windows de compartilhar a tela com os amigos: até 4K a 120 fps, áudio sem o Discord, sem conta e com Codenames, Stop e Sketch dentro da call.">
+  <meta name="theme-color" content="#060607">
+  <meta name="color-scheme" content="dark">
+
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:site_name" content="TelinhaFix">
+  <meta property="og:title" content="TelinhaFix - compartilhe sua tela com os amigos">
+  <meta property="og:description" content="Grátis, sem conta, só Windows. Até 4K a 120 fps, áudio sem o Discord e minijogos dentro da call.">
+  <meta property="og:image" content="https://rafaellmello.github.io/telinhafixlanding/img/og.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Logo do TelinhaFix ao lado do nome e da frase: compartilhe sua tela com os amigos.">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="icon" href="favicon.ico" sizes="any">
+  <link rel="icon" href="favicon-32.png" type="image/png" sizes="32x32">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Poppins:wght@600;700&display=swap">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preload" as="image" href="img/seletor-compartilhar.webp" fetchpriority="high">
+</head>
+<body>
+  <a class="skip" href="#conteudo">Pular para o conteúdo</a>
+
+  <header class="topbar">
+    <div class="wrap topbar__inner">
+      <a class="brand" href="#" aria-label="TelinhaFix, início">
+        <img src="img/logo-96.png" width="36" height="36" alt="">
+        <span>TelinhaFix</span>
+      </a>
+      <nav class="topnav" aria-label="Seções">
+        <a href="#recursos">Recursos</a>
+        <a href="#minijogos">Minijogos</a>
+        <a href="#como-funciona">Como funciona</a>
+        <a href="#perguntas">Perguntas</a>
+      </nav>
+      <a class="btn btn--small" href="https://github.com/RafaellMello/telinhafix/releases/latest">Baixar</a>
+    </div>
+  </header>
+
+  <main id="conteudo">
+
+    <!-- 1. Topo -->
+    <section class="hero" aria-labelledby="hero-titulo">
+      <div class="wrap hero__grid">
+        <div class="hero__copy">
+          <p class="room-tag"><span>Sala:</span> <code>latadelixo</code></p>
+          <h1 id="hero-titulo">Sua tela pros amigos, em&nbsp;1080p&nbsp;e <span class="mark">sem eco do Discord</span>.</h1>
+          <p class="lead">Tipo o Go Live do Discord, só que você escolhe a qualidade (até 4K a 120&nbsp;fps), o som vai sem a call junto e, quando cansar, tem Codenames, Stop e Sketch ali mesmo.</p>
+          <div class="cta">
+            <a class="btn" href="https://github.com/RafaellMello/telinhafix/releases/latest">
+              <svg class="btn__icon" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M0 2.2 6.5 1.3v6.3H0zm7.3-1L16 0v7.6H7.3zM0 8.4h6.5v6.3L0 13.8zm7.3 0H16V16l-8.7-1.2z"/></svg>
+              Baixar para Windows
+            </a>
+            <p class="cta__meta">Grátis • Windows 10/11 • sem conta</p>
+          </div>
+        </div>
+
+        <figure class="hero__shot">
+          <img src="img/seletor-compartilhar.webp" width="801" height="686" fetchpriority="high"
+               alt="Janela do TelinhaFix “Escolha o que compartilhar”: duas telas para escolher, resolução 1080p e 60 fps selecionados e áudio “Sistema, sem o Discord”.">
+          <div class="hero__chip" aria-hidden="true">
+            <span class="dot"></span>
+            <span>1080p · 60fps</span>
+            <span class="hero__chip-sub">áudio: sistema, sem o Discord</span>
+          </div>
+        </figure>
+      </div>
+    </section>
+
+    <!-- 2. Essencial em ação -->
+    <section class="band" aria-labelledby="essencial-titulo">
+      <div class="wrap band__grid">
+        <div class="band__copy">
+          <h2 id="essencial-titulo">Três escolhas e você tá ao vivo.</h2>
+          <p>Antes de compartilhar, o TelinhaFix pergunta só o que importa. Sem menu escondido, sem configuração avançada.</p>
+
+          <dl class="spec">
+            <div>
+              <dt>Resolução</dt>
+              <dd>720p · <b>1080p</b> · 1440p · 4K</dd>
+            </div>
+            <div>
+              <dt>Quadros</dt>
+              <dd>30 · <b>60</b> · 120 fps</dd>
+            </div>
+            <div>
+              <dt>Áudio</dt>
+              <dd><b>sistema, sem o Discord</b> · sistema todo · só um programa</dd>
+            </div>
+          </dl>
+        </div>
+
+        <figure class="band__shot reveal">
+          <img src="img/seletor-qualidade.webp" width="801" height="212" loading="lazy" decoding="async"
+               alt="Recorte do seletor do TelinhaFix com as opções de resolução (720p, 1080p, 1440p, 4K), taxa de quadros (30, 60, 120 fps) e áudio da transmissão.">
+          <figcaption>O seletor de verdade, sem retoque.</figcaption>
+        </figure>
+
+        <div class="band__notes">
+          <p><strong>Não sabe o que seu PC aguenta?</strong> O teste de desempenho mede o PC e a internet e te fala até onde dá pra ir sem travar.</p>
+          <p><strong>Direto de um PC pro outro.</strong> A conexão é P2P. Se a rede de alguém não deixar, um servidor intermediário entra sozinho e ninguém precisa mexer em nada.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. Recursos -->
+    <section id="recursos" class="features" aria-label="Recursos">
+      <div class="wrap">
+
+        <article class="feature feature--a" aria-labelledby="f-tela">
+          <header class="feature__head">
+            <p class="kicker">01 — Transmitir</p>
+            <h2 id="f-tela">Sua tela do jeito certo</h2>
+          </header>
+          <ul class="items">
+            <li>
+              <h3>Qualidade que você escolhe</h3>
+              <p>De 720p a 4K, de 30 a 120 fps. Quem tem PC bom não fica preso no 720p de ninguém.</p>
+            </li>
+            <li>
+              <h3>Áudio sem o Discord</h3>
+              <p>O som do PC vai junto com a tela, menos o Discord. Quem tá na call não escuta a própria voz voltando. Quer mandar só o som do jogo? Também dá.</p>
+            </li>
+            <li>
+              <h3>Sem cursor</h3>
+              <p>A setinha do mouse some da transmissão. Em jogo, faz diferença. Ainda tá em beta.</p>
+            </li>
+            <li>
+              <h3>Câmera</h3>
+              <p>Uma bolinha da sua webcam por cima da tela. Ou só a câmera, quando a ideia é mostrar a cara mesmo.</p>
+            </li>
+          </ul>
+          <figure class="feature__bar reveal">
+            <img src="img/barra-compartilhar.webp" width="888" height="56" loading="lazy" decoding="async"
+                 alt="Botões da sala do TelinhaFix: Compartilhar tela, Compartilhar sem cursor (beta) e Compartilhar câmera.">
+            <figcaption>Os três botões que ficam no topo da sala.</figcaption>
+          </figure>
+        </article>
+
+        <article class="feature feature--b" aria-labelledby="f-junto">
+          <div class="feature__media reveal">
+            <div class="placeholder" role="img" aria-label="Espaço reservado para um print do TelinhaFix com várias pessoas transmitindo ao mesmo tempo.">
+              <span>[PRINT: sala com 2 ou 3 amigos transmitindo ao mesmo tempo, com o controle de volume de alguém aberto]</span>
+            </div>
+          </div>
+          <div class="feature__body">
+            <header class="feature__head">
+              <p class="kicker">02 — Assistir</p>
+              <h2 id="f-junto">Todo mundo junto</h2>
+            </header>
+            <ul class="items items--tight">
+              <li>
+                <h3>Várias telas de uma vez</h3>
+                <p>Todo mundo pode transmitir ao mesmo tempo. Tela cheia, modo foco, ou esconde a de quem tá parado no menu.</p>
+              </li>
+              <li>
+                <h3>Volume de cada um</h3>
+                <p>Cada pessoa tem o próprio volume, até <span class="num">200%</span>. Aquele amigo que fala baixo agradece.</p>
+              </li>
+              <li>
+                <h3>Chat na sala</h3>
+                <p>Pra mandar link sem sair do jogo e pra reclamar de quem roubou no Stop.</p>
+              </li>
+              <li>
+                <h3>Link de convite</h3>
+                <p>Manda o link no grupo. Clicou, entrou na sala.</p>
+              </li>
+            </ul>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- 4. Minijogos -->
+    <section id="minijogos" class="games" aria-labelledby="g-titulo">
+      <div class="wrap">
+        <header class="games__head">
+          <p class="kicker kicker--light">03 — Jogar</p>
+          <h2 id="g-titulo">E quando bater o tédio</h2>
+          <p>Três jogos dentro da call. Ninguém precisa abrir site, criar conta ou mandar link de outro lugar.</p>
+        </header>
+
+        <div class="games__main">
+          <figure class="games__shot reveal">
+            <img src="img/codenames-3-times.webp" width="1078" height="817" loading="lazy" decoding="async"
+                 alt="Partida de Codenames no TelinhaFix com três equipes (vermelha, verde e azul), tabuleiro de 25 palavras e histórico de pistas.">
+          </figure>
+          <div class="games__copy">
+            <h3>Codenames</h3>
+            <p>Dois times, ou três no todos contra todos. Tem mestre-espião, cronômetro pra ninguém enrolar, histórico das dicas e efeito quando alguém acha o assassino.</p>
+            <dl class="spec spec--games">
+              <div>
+                <dt>Times</dt>
+                <dd>2 ou 3 (todos contra todos)</dd>
+              </div>
+              <div>
+                <dt>Tempo</dt>
+                <dd><b>01:30</b> pra escolher depois da pista</dd>
+              </div>
+            </dl>
+          </div>
+        </div>
+
+        <div class="games__more">
+          <div class="game">
+            <div class="placeholder placeholder--short" role="img" aria-label="Espaço reservado para um print do Stop no TelinhaFix.">
+              <span>[PRINT: partida de Stop rolando]</span>
+            </div>
+            <h3>Stop</h3>
+            <p>A velha adedonha, só que ninguém precisa achar papel e caneta.</p>
+          </div>
+          <div class="game">
+            <div class="placeholder placeholder--short" role="img" aria-label="Espaço reservado para um print do Sketch no TelinhaFix.">
+              <span>[PRINT: alguém desenhando no Sketch]</span>
+            </div>
+            <h3>Sketch</h3>
+            <p>Um desenha, o resto tenta adivinhar. O talento artístico é opcional.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. Como funciona -->
+    <section id="como-funciona" class="steps" aria-labelledby="s-titulo">
+      <div class="wrap">
+        <h2 id="s-titulo">Do download à sala em três passos</h2>
+        <ol class="steps__list">
+          <li class="step">
+            <span class="step__n" aria-hidden="true">01</span>
+            <h3>Baixa e instala</h3>
+            <p>Um instalador só, pro Windows 10 ou 11. Se o Windows reclamar, <a href="#windows-avisa">a explicação tá aqui embaixo</a>.</p>
+          </li>
+          <li class="step">
+            <span class="step__n" aria-hidden="true">02</span>
+            <h3>Coloca nome e código da sala</h3>
+            <p>Sem cadastro, sem e-mail, sem senha.</p>
+            <div class="login-sample" aria-hidden="true">
+              <span><i>nome</i> bunny</span>
+              <span><i>sala</i> latadelixo</span>
+            </div>
+          </li>
+          <li class="step">
+            <span class="step__n" aria-hidden="true">03</span>
+            <h3>Manda o link pros amigos</h3>
+            <p>Quem clica cai direto na sala. Quem ainda não tem o app já vê onde baixar.</p>
+            <img class="step__img" src="img/convite.webp" width="420" height="524" loading="lazy" decoding="async"
+                 alt="Página de convite do TelinhaFix: “Você foi convidado pro TelinhaFix”, código da sala paygorn e os botões Abrir no TelinhaFix, Copiar código da sala e Não tenho o TelinhaFix - baixar.">
+          </li>
+        </ol>
+
+        <aside class="updates" aria-labelledby="u-titulo">
+          <div class="updates__copy">
+            <h3 id="u-titulo">E depois disso, ele se vira sozinho</h3>
+            <p>Saiu versão nova, o TelinhaFix atualiza sozinho. Na primeira vez que abre depois, ele mostra o que mudou, versão por versão.</p>
+          </div>
+          <img src="img/novidades.webp" width="532" height="376" loading="lazy" decoding="async"
+               alt="Aba Novidades do TelinhaFix listando o que mudou nas versões 3.5.5 e 3.5.4.">
+        </aside>
+      </div>
+    </section>
+
+    <!-- 6. Perguntas -->
+    <section id="perguntas" class="faq" aria-labelledby="q-titulo">
+      <div class="wrap faq__grid">
+        <h2 id="q-titulo">Perguntas rápidas</h2>
+        <div class="faq__list">
+          <details>
+            <summary>É grátis mesmo?</summary>
+            <p>É. Baixa, instala e usa, sem pagar nada.</p>
+          </details>
+          <details>
+            <summary>Precisa criar conta?</summary>
+            <p>Não. Você coloca um nome, o código da sala e entra.</p>
+          </details>
+          <details>
+            <summary>Funciona no Mac?</summary>
+            <p>Não. O TelinhaFix é só pra Windows 10 e 11.</p>
+          </details>
+          <details id="windows-avisa">
+            <summary>Por que o Windows avisa quando eu instalo?</summary>
+            <p>Porque o instalador não tem a assinatura paga da Microsoft, que custa caro pra um app gratuito. Não é vírus, é só o Windows desconfiando de quem não pagou. Quando aparecer a tela azul, clica em <b>“Mais informações”</b> e depois em <b>“Executar assim mesmo”</b>.</p>
+          </details>
+          <details>
+            <summary>Funciona com o Discord aberto?</summary>
+            <p>Funciona, e foi pensado pra isso. Na hora de compartilhar, escolhe <b>“Sistema, sem o Discord”</b>: o som do jogo vai, a call fica de fora e ninguém escuta a própria voz voltando.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- Chamada final -->
+    <section class="final" aria-labelledby="final-titulo">
+      <div class="wrap final__inner">
+        <h2 id="final-titulo">Bora chamar o pessoal?</h2>
+        <div class="cta">
+          <a class="btn" href="https://github.com/RafaellMello/telinhafix/releases/latest">
+            <svg class="btn__icon" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M0 2.2 6.5 1.3v6.3H0zm7.3-1L16 0v7.6H7.3zM0 8.4h6.5v6.3L0 13.8zm7.3 0H16V16l-8.7-1.2z"/></svg>
+            Baixar para Windows
+          </a>
+          <p class="cta__meta">Grátis • Windows 10/11 • sem conta</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap footer__inner">
+      <a class="brand" href="#" aria-label="TelinhaFix, voltar ao início">
+        <img src="img/logo-96.png" width="28" height="28" alt="" loading="lazy">
+        <span>TelinhaFix</span>
+      </a>
+      <nav class="footer__links" aria-label="Links">
+        <a href="https://github.com/RafaellMello/telinhafix/releases/latest">Baixar a última versão</a>
+        <a href="https://github.com/RafaellMello/telinhafix">GitHub</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      var els = document.querySelectorAll('.reveal');
+      if (!('IntersectionObserver' in window) || matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+      document.documentElement.classList.add('js-reveal');
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) {
+          if (e.isIntersecting) { e.target.classList.add('is-in'); io.unobserve(e.target); }
+        });
+      }, { rootMargin: '0px 0px -8% 0px' });
+      els.forEach(function (el) { io.observe(el); });
+    })();
+  </script>
+</body>
+</html>
