@@ -106,6 +106,8 @@ export function Hero() {
           </div>
         </div>
       </div>
+      {/* Daqui pra baixo o fundo animado aparece; o FluidBackground só renderiza depois deste ponto. */}
+      <div className="hero__end" data-fluid-start aria-hidden="true" />
     </section>
   )
 }

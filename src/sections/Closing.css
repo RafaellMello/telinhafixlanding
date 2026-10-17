@@ -1,5 +1,7 @@
 .final {
   padding-block: var(--section) clamp(72px, 9vw, 120px);
+  /* Apaga o fluido até o fundo sólido do rodapé. */
+  background: linear-gradient(transparent 45%, var(--bg));
 }
 
 .final__inner {

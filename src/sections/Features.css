@@ -84,7 +84,8 @@ figcaption {
   color: var(--dim);
 }
 .scale span {
-  font-size: calc(var(--k) * clamp(1.3rem, 0.9rem + 1.3vw, 2rem));
+  /* Mínimo de 24px: o 720p em cinza apagado conta como texto grande pro contraste. */
+  font-size: calc(var(--k) * clamp(1.5rem, 0.9rem + 1.3vw, 2rem));
 }
 .scale .is-on,
 .fps .is-on {

@@ -1,5 +1,22 @@
+/* O hero é o único trecho com fundo sólido: cobre o fluido e emenda nele com um degradê. */
 .hero {
+  position: relative;
   padding-top: clamp(40px, 7vw, 104px);
+  background: var(--bg);
+}
+.hero::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  z-index: -1;
+  height: clamp(120px, 18vw, 240px);
+  background: linear-gradient(var(--bg), transparent);
+  pointer-events: none;
+}
+.hero__end {
+  height: 1px;
 }
 
 .hero__title {

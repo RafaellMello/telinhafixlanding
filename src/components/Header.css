@@ -1,3 +1,7 @@
+.topbar {
+  background: var(--bg);
+}
+
 .topbar__inner {
   display: flex;
   align-items: center;

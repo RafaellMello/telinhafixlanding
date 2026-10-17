@@ -1,4 +1,5 @@
 import { useEffect } from 'react'
+import { FluidBackground } from './components/FluidBackground'
 import { Header } from './components/Header'
 import { LazySection } from './components/LazySection'
 import { lazySection, prefetchSections } from './lib/lazy-sections'
@@ -16,6 +17,7 @@ export default function App() {
 
   return (
     <SmoothScroll>
+      <FluidBackground />
       <a className="skip" href="#conteudo">Pular para o conteúdo</a>
       <Header />
       <main id="conteudo">

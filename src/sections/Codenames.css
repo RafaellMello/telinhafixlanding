@@ -1,6 +1,7 @@
 .cn {
   padding-block: var(--section);
-  background: var(--red-deep);
+  /* Vermelho escuro translúcido: a faixa continua, e o fluido passa por baixo. */
+  background: rgba(58, 10, 8, 0.72);
   overflow: hidden;
 }
 
