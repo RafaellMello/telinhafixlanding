@@ -17,13 +17,20 @@ function useHeroMotion({ root, title, stage, screen }: HeroRefs) {
     () => {
       const mm = gsap.matchMedia()
       mm.add(MOTION_OK, () => {
-        // O título sobe linha por linha uma vez, quando a página abre.
-        const split = SplitText.create(title.current, {
-          type: 'lines',
-          mask: 'lines',
-          autoSplit: true,
-          onSplit: (self) =>
-            gsap.from(self.lines, { yPercent: 108, duration: 1.15, ease: 'expo.out', stagger: 0.09 }),
+        // O título sobe linha por linha uma vez, quando a página abre. As máscaras das linhas cortam
+        // as pernas do "g" e do "p", então só existem durante a animação: no fim volta o texto normal.
+        let split: SplitText | null = null
+        let cancelled = false
+        document.fonts.ready.then(() => {
+          if (cancelled || !title.current) return
+          split = SplitText.create(title.current, { type: 'lines', mask: 'lines' })
+          gsap.from(split.lines, {
+            yPercent: 108,
+            duration: 1.15,
+            ease: 'expo.out',
+            stagger: 0.09,
+            onComplete: () => split?.revert(),
+          })
         })
         gsap.from('.hero__side', { y: 18, opacity: 0, duration: 1, delay: 0.35, ease: 'expo.out' })
 
@@ -42,7 +49,10 @@ function useHeroMotion({ root, title, stage, screen }: HeroRefs) {
           })
         })
 
-        return () => split.revert()
+        return () => {
+          cancelled = true
+          split?.revert()
+        }
       })
     },
     { scope: root },

@@ -202,36 +202,34 @@ figcaption {
     will-change: transform;
   }
 
+  /* Cada painel tem a largura do próprio conteúdo; o respiro entre eles é sempre o mesmo. */
   .panel {
     flex: none;
+    width: auto;
     height: 100%;
     padding-block: 12vh 10vh;
-    padding-right: 7vw;
+    padding-right: 9vw;
+  }
+  .panel__copy {
+    max-width: 32rem;
   }
 
-  .panel--intro {
-    width: 40vw;
-    align-content: center;
-  }
-  .panel--quality {
-    width: 60vw;
-    grid-template-rows: auto auto;
+  .panel--intro > * {
+    max-width: 30rem;
   }
   .panel--audio {
-    width: 64vw;
-    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    grid-template-columns: minmax(0, 24rem) max-content;
     align-items: center;
     column-gap: 5vw;
   }
-  .panel--controls {
-    width: 66vw;
+  .panel--controls .bar-shot {
+    width: min(888px, 58vw);
   }
-  .panel--together {
-    width: 42vw;
+  .panel--controls .pair p {
+    max-width: 22em;
   }
   .panel--net {
-    width: 70vw;
-    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    grid-template-columns: minmax(0, 26rem) minmax(0, 32rem);
     align-items: center;
     column-gap: 5vw;
   }
