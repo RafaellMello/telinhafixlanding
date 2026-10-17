@@ -226,10 +226,7 @@ figcaption {
     width: 66vw;
   }
   .panel--together {
-    width: 74vw;
-    grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
-    align-items: center;
-    column-gap: 5vw;
+    width: 42vw;
   }
   .panel--net {
     width: 70vw;

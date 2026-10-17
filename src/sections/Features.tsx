@@ -167,14 +167,6 @@ function ControlsPanel() {
 function TogetherPanel() {
   return (
     <article className="panel panel--together" aria-labelledby="f-junto">
-      <div
-        className="placeholder panel__visual"
-        data-turn
-        role="img"
-        aria-label="Espaço reservado para um print do TelinhaFix com várias pessoas transmitindo ao mesmo tempo."
-      >
-        <span>[PRINT: sala com 2 ou 3 amigos transmitindo ao mesmo tempo, com o controle de volume de alguém aberto]</span>
-      </div>
       <div className="panel__copy">
         <h3 id="f-junto">Todo mundo junto</h3>
         <ul className="facts">

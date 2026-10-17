@@ -25,10 +25,6 @@ A `og:image` e a `og:url` precisam de endereço absoluto. No build, o `vite.conf
 - Com "reduzir movimento" ligado no sistema, a rolagem suave, o 3D e as animações de scroll ficam desligados.
 - `src/components/HalftoneWordmarkFooter.tsx` é o rodapé com o letreiro em pontos (canvas).
 
-## Prints que faltam
-
-O painel "Todo mundo junto" tem um espaço marcado `[PRINT: …]` esperando um print de uma sala com 2 ou 3 amigos transmitindo ao mesmo tempo, com o controle de volume aberto. Pra trocar, substitui o `div.placeholder` em `src/sections/Features.tsx` por um `<img>` com `width`, `height`, `alt` e `loading="lazy"`, e coloca o arquivo em `public/img/`.
-
 ## Arquivos
 
 - `public/img/` — prints do app em WebP e o logo
