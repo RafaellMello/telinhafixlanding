@@ -20,7 +20,7 @@ A `og:image` e a `og:url` precisam de endereço absoluto. No build, o `vite.conf
 ## Como a página está montada
 
 - `src/sections/Hero.tsx` carrega junto com a página. As outras seções (`Features`, `Codenames`, `Steps`, `Faq`, `Closing`) são chunks separados: o navegador baixa quando fica ocioso e cada uma só monta quando chega perto da tela (`src/components/LazySection.tsx`).
-- Links internos (`#recursos`, `#perguntas`...) passam por `src/lib/smooth-scroll.tsx`, que monta as seções que faltam antes de rolar.
+- Links internos (`#recursos`, `#duvidas`...) passam por `src/lib/smooth-scroll.tsx`, que monta as seções que faltam antes de rolar.
 - `src/sections/Features.tsx` é o trilho lateral: no desktop fica preso na tela e anda pro lado com o scroll. No celular e com "reduzir movimento" ligado, vira uma lista normal.
 - Com "reduzir movimento" ligado no sistema, a rolagem suave, o 3D e as animações de scroll ficam desligados.
 - `src/components/HalftoneWordmarkFooter.tsx` é o rodapé com o letreiro em pontos (canvas).

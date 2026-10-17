@@ -13,7 +13,7 @@ export function Header() {
           <a href="#recursos">Recursos</a>
           <a href="#codenames">Codenames</a>
           <a href="#como-funciona">Como funciona</a>
-          <a href="#perguntas">Perguntas</a>
+          <a href="#duvidas">Dúvidas</a>
         </nav>
         <a className="btn btn--small topbar__cta" href={DOWNLOAD_URL}>
           Baixar

@@ -19,7 +19,7 @@ const COLUMNS: FooterColumn[] = [
       { label: 'Recursos', href: '#recursos' },
       { label: 'Codenames', href: '#codenames' },
       { label: 'Como funciona', href: '#como-funciona' },
-      { label: 'Perguntas', href: '#perguntas' },
+      { label: 'Dúvidas', href: '#duvidas' },
     ],
   },
 ]
