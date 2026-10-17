@@ -34,9 +34,10 @@ function useHeroMotion({ root, title, stage, screen }: HeroRefs) {
         })
         gsap.from('.hero__side', { y: 18, opacity: 0, duration: 1, delay: 0.35, ease: 'expo.out' })
 
-        // A telinha começa deitada pra trás, como tela de notebook abrindo, e fica de pé com o scroll.
-        const scrub = { trigger: stage.current, start: 'top bottom', end: 'center 62%', scrub: 0.7 }
-        gsap.fromTo(screen.current, { rotateX: 30, scale: 0.9 }, { rotateX: 0, scale: 1, ease: 'none', scrollTrigger: scrub })
+        // A telinha começa deitada pra trás, como tela de notebook abrindo, e fica de pé com o scroll:
+        // reta quando o topo dela chega a 22% da tela, desacelerando no fim.
+        const scrub = { trigger: stage.current, start: 'top bottom', end: 'top 22%', scrub: 0.4 }
+        gsap.fromTo(screen.current, { rotateX: 30, scale: 0.9 }, { rotateX: 0, scale: 1, ease: 'power2.out', scrollTrigger: scrub })
 
         // As etiquetas flutuam em profundidades diferentes e andam em velocidades diferentes.
         gsap.utils.toArray<HTMLElement>('.chip', root.current).forEach((chip) => {

@@ -4,22 +4,26 @@ import './Codenames.css'
 
 export default function Codenames() {
   const root = useRef<HTMLElement>(null)
+  const table = useRef<HTMLDivElement>(null)
   const board = useRef<HTMLElement>(null)
 
   useGSAP(
     () => {
       const mm = gsap.matchMedia()
-      // O tabuleiro começa deitado, como na mesa, e levanta pra ficar de frente.
+      // O tabuleiro começa deitado, como na mesa, e levanta pra ficar de frente. Fica reto quando o topo
+      // dele chega a 25% da tela (não depende da altura dele), e a curva desacelera no fim: a maior parte
+      // do giro acontece logo que ele entra.
       mm.add(MOTION_OK, () => {
         gsap.fromTo(
           board.current,
-          { rotateX: 62, scale: 0.84, yPercent: 8 },
+          { rotateX: 50, scale: 0.88, yPercent: 6 },
           {
             rotateX: 0,
             scale: 1,
             yPercent: 0,
-            ease: 'none',
-            scrollTrigger: { trigger: board.current, start: 'top bottom', end: 'center 58%', scrub: 0.8 },
+            ease: 'power2.out',
+            // Gatilho no container, que não gira: o próprio tabuleiro inclinado mede mais baixo do que está.
+            scrollTrigger: { trigger: table.current, start: 'top bottom', end: 'top 25%', scrub: 0.4 },
           },
         )
       })
@@ -34,7 +38,7 @@ export default function Codenames() {
         <p>Dentro da call. Ninguém precisa abrir site nem criar conta em outro lugar.</p>
       </div>
 
-      <div className="cn__table">
+      <div className="cn__table" ref={table}>
         <figure className="cn__board" ref={board}>
           <img
             src="/img/codenames-3-times.webp"
