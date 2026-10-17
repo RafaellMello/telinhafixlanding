@@ -1,8 +1,24 @@
 .cn {
+  position: relative;
+  isolation: isolate;
   padding-block: var(--section);
-  /* Vermelho escuro translúcido: a faixa continua, e o fluido passa por baixo. */
-  background: rgba(58, 10, 8, 0.72);
   overflow: hidden;
+}
+
+/* Degradê em camadas: luz vermelha forte no alto, atrás do título; outra mais suave subindo do canto
+   de baixo; base descendo do vermelho escuro quase até o preto. As bordas se dissolvem no fluido. */
+.cn::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background:
+    radial-gradient(120% 60% at 50% 0%, rgba(226, 35, 26, 0.45) 0%, rgba(160, 22, 15, 0.22) 38%, transparent 72%),
+    radial-gradient(70% 45% at 8% 100%, rgba(255, 59, 47, 0.14) 0%, transparent 70%),
+    radial-gradient(60% 40% at 92% 55%, rgba(120, 14, 10, 0.35) 0%, transparent 75%),
+    linear-gradient(180deg, #3a0a08 0%, #2a070a 45%, #13060a 80%, #0a0506 100%);
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0, #000 9%, #000 91%, transparent 100%);
+  mask-image: linear-gradient(to bottom, transparent 0, #000 9%, #000 91%, transparent 100%);
 }
 
 .cn__head {

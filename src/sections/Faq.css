@@ -118,12 +118,12 @@
   .faq__grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
-  /* Minijogos: largura toda, perguntas em duas colunas alinhadas com as de cima. */
+  /* Minijogos: largura toda, uma pergunta por coluna. */
   .faq__cat--wide {
     grid-column: 1 / -1;
   }
   .faq__cat--wide .faq__cols {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     column-gap: 20px;
     align-items: start;
   }

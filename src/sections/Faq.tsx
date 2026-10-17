@@ -12,7 +12,7 @@ interface Item {
 interface Category {
   title: string
   items: Item[]
-  /** Ocupa as duas colunas, com as perguntas lado a lado. */
+  /** Ocupa a largura toda, com as perguntas lado a lado. */
   wide?: boolean
 }
 
@@ -73,18 +73,23 @@ const CATEGORIES: Category[] = [
           </>
         ),
       },
-      {
-        q: 'Consigo ouvir os outros enquanto compartilho?',
-        a: 'Consegue. Você ouve a tela dos amigos mesmo com a sua no ar, e o som que você manda deixa o próprio TelinhaFix de fora, então ninguém ouve eco.',
-      },
     ],
   },
   {
-    title: 'Qualidade e conexão',
+    title: 'Transmissão e conexão',
     items: [
       {
         q: 'Qual qualidade dá pra usar?',
         a: 'De 720p a 4K, com 30, 60 ou 120 fps. O teste de desempenho mede o seu PC e a sua internet e mostra até onde dá pra ir sem travar.',
+      },
+      {
+        q: 'Dá pra mostrar só uma janela em vez da tela toda?',
+        a: (
+          <>
+            Dá. Na hora de compartilhar, escolhe <b>“Janela de um programa”</b> em vez de <b>“Tela inteira”</b>. Com mais
+            de um monitor, você escolhe qual tela vai.
+          </>
+        ),
       },
       {
         q: 'Funciona no 4G ou em rede com firewall?',
@@ -97,24 +102,8 @@ const CATEGORIES: Category[] = [
     wide: true,
     items: [
       {
-        q: 'Quantas pessoas precisa pro Codenames?',
+        q: 'Quantas pessoas pro Codenames?',
         a: 'Cada time precisa de 1 mestre-espião e pelo menos 1 agente: 4 pessoas pra 2 times, 6 pro todos contra todos com 3. Quem não entrar em time fica assistindo.',
-      },
-      {
-        q: 'As palavras do Codenames repetem muito?',
-        a: 'São mais de 1000 palavras, com acento, sorteadas de novo a cada partida.',
-      },
-      {
-        q: 'Dá pra jogar Codenames com câmera?',
-        a: (
-          <>
-            Dá. O botão <b>“Ligar câmera”</b> dentro do jogo coloca sua câmera no lugar do avatar, na coluna do seu time.
-          </>
-        ),
-      },
-      {
-        q: 'Minha internet caiu no meio da partida. Perdi meu lugar?',
-        a: 'Não. Voltando com o mesmo nome, você cai no mesmo lugar do time. E se um time fica desfalcado, a vez dele é pulada pro jogo não travar.',
       },
       {
         q: 'Como funciona o Stop?',
@@ -128,11 +117,9 @@ const CATEGORIES: Category[] = [
   },
 ]
 
-/** Categoria larga vira duas colunas independentes: abrir uma pergunta não abre buraco na outra. */
+/** Categoria larga põe cada pergunta numa coluna própria: abrir uma não abre buraco nas outras. */
 function columnsOf(cat: Category) {
-  if (!cat.wide) return [cat.items]
-  const half = Math.ceil(cat.items.length / 2)
-  return [cat.items.slice(0, half), cat.items.slice(half)]
+  return cat.wide ? cat.items.map((item) => [item]) : [cat.items]
 }
 
 export default function Faq() {
@@ -141,7 +128,7 @@ export default function Faq() {
       <div className="wrap faq__inner">
         <header className="faq__head">
           <h2 id="faq-titulo">Dúvidas e Esclarecimentos</h2>
-          <p>Instalação, sala, voz, qualidade e minijogos, separados pra você achar rápido.</p>
+          <p>Instalação, sala, voz, transmissão e minijogos, separados pra você achar rápido.</p>
         </header>
 
         <div className="faq__grid">
@@ -151,8 +138,8 @@ export default function Faq() {
               <div className="faq__cols">
                 {columnsOf(cat).map((items) => (
                   <div className="faq__list" key={items[0]?.q}>
-                    {items.map((item, i) => (
-                      <details key={item.q} id={item.id} open={i === 0}>
+                    {items.map((item) => (
+                      <details key={item.q} id={item.id}>
                         <summary>{item.q}</summary>
                         <p>{item.a}</p>
                       </details>
