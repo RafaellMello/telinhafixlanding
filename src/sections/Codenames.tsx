@@ -38,6 +38,8 @@ export default function Codenames() {
         <figure className="cn__board" ref={board}>
           <img
             src="/img/codenames-3-times.webp"
+            srcSet="/img/codenames-3-times.webp 1078w, /img/codenames-3-times@2x.webp 2156w"
+            sizes="(min-width: 1190px) 1080px, calc(100vw - 32px)"
             width={1078}
             height={817}
             loading="lazy"

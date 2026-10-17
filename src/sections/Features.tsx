@@ -142,6 +142,8 @@ function ControlsPanel() {
       <figure className="panel__visual bar-shot" data-turn>
         <img
           src="/img/barra-compartilhar.webp"
+          srcSet="/img/barra-compartilhar.webp 888w, /img/barra-compartilhar@2x.webp 1776w"
+          sizes="(min-width: 960px) min(888px, 58vw), 620px"
           width={888}
           height={56}
           loading="lazy"
@@ -205,6 +207,8 @@ function NetworkPanel() {
         <img
           className="news-shot"
           src="/img/novidades.webp"
+          srcSet="/img/novidades.webp 532w, /img/novidades@2x.webp 1064w"
+          sizes="(min-width: 600px) 520px, calc(100vw - 32px)"
           width={532}
           height={376}
           loading="lazy"

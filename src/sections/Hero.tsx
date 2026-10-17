@@ -107,6 +107,8 @@ export function Hero() {
             <img
               className="stage__shot"
               src="/img/seletor-compartilhar.webp"
+              srcSet="/img/seletor-compartilhar.webp 801w, /img/seletor-compartilhar@2x.webp 1602w"
+              sizes="(min-width: 1030px) 920px, calc(100vw - 32px)"
               width={801}
               height={686}
               fetchPriority="high"

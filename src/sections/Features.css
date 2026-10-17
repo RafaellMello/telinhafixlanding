@@ -131,7 +131,10 @@ figcaption {
   color: var(--red);
 }
 
-/* Barra de botões */
+/* Barra de botões: nunca maior que a versão 2x aguenta com nitidez */
+.bar-shot {
+  max-width: 888px;
+}
 .bar-shot img {
   width: 100%;
   border-radius: 10px;
