@@ -36,6 +36,7 @@
   color: var(--muted);
 }
 
+.faq__cols,
 .faq__list {
   display: grid;
   gap: 8px;
@@ -116,5 +117,14 @@
 @media (min-width: 800px) {
   .faq__grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  /* Minijogos: largura toda, perguntas em duas colunas alinhadas com as de cima. */
+  .faq__cat--wide {
+    grid-column: 1 / -1;
+  }
+  .faq__cat--wide .faq__cols {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: 20px;
+    align-items: start;
   }
 }
