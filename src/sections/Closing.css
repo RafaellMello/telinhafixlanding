@@ -1,0 +1,45 @@
+.final {
+  padding-block: var(--section) clamp(72px, 9vw, 120px);
+}
+
+.final__inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 32px 48px;
+}
+
+.final h2 {
+  max-width: 11ch;
+  font-size: clamp(2.4rem, 1rem + 4.8vw, 5.5rem);
+  line-height: 1;
+  letter-spacing: -0.035em;
+}
+
+/* Altura do rodapé: área de texto fixa + o letreiro, que cresce com a largura da tela. */
+:root {
+  --footer-h: max(540px, calc(390px + 14vw));
+}
+
+.madeby {
+  margin-top: clamp(40px, 6vw, 72px);
+  font: 700 clamp(2.4rem, 1rem + 5.4vw, 5.75rem) / 1 var(--f-display);
+  letter-spacing: -0.035em;
+  color: var(--text);
+}
+
+.madeby a {
+  color: var(--red-hi);
+  text-decoration: underline;
+  text-decoration-thickness: 0.06em;
+  text-underline-offset: 0.12em;
+  transition:
+    color 0.2s ease,
+    text-decoration-thickness 0.3s var(--ease-out);
+}
+.madeby a:hover {
+  color: var(--text);
+  text-decoration-color: var(--red);
+  text-decoration-thickness: 0.12em;
+}

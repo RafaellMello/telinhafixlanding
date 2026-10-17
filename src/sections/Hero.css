@@ -1,0 +1,139 @@
+.hero {
+  padding-top: clamp(40px, 7vw, 104px);
+}
+
+.hero__title {
+  max-width: 15ch;
+  font-size: clamp(2.6rem, 0.8rem + 5.6vw, 5.75rem);
+  line-height: 1.02;
+  letter-spacing: -0.035em;
+}
+
+.mark {
+  text-decoration: underline;
+  text-decoration-color: var(--red);
+  text-decoration-thickness: 0.085em;
+  text-underline-offset: 0.12em;
+  text-decoration-skip-ink: none;
+}
+
+.hero__side {
+  display: grid;
+  gap: 32px;
+  margin-top: clamp(28px, 4vw, 48px);
+}
+
+.hero__lead {
+  max-width: 34em;
+  font-size: clamp(1.0625rem, 1rem + 0.3vw, 1.25rem);
+  line-height: 1.55;
+  color: var(--muted);
+}
+
+@media (min-width: 960px) {
+  .mark {
+    white-space: nowrap;
+  }
+  .hero__side {
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: end;
+    column-gap: 64px;
+  }
+}
+
+/* ---------- Palco 3D ---------- */
+.stage {
+  padding: clamp(40px, 5vw, 72px) var(--gutter) 0;
+  perspective: 1500px;
+  perspective-origin: 50% 20%;
+}
+
+.stage__screen {
+  max-width: 920px;
+  margin-inline: auto;
+  transform-origin: 50% 100%;
+  transform-style: preserve-3d;
+}
+
+.stage__tilt {
+  position: relative;
+  transform-style: preserve-3d;
+}
+
+.stage__shot {
+  width: 100%;
+  border: 1px solid var(--line-strong);
+  border-radius: 14px;
+  box-shadow: 0 70px 120px -60px rgba(0, 0, 0, 1);
+}
+
+.chip {
+  position: absolute;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0;
+  padding: 12px 16px;
+  border: 1px solid var(--line-strong);
+  border-radius: 12px;
+  background: var(--s1);
+  font: 500 clamp(0.75rem, 0.6rem + 0.45vw, 1rem) / 1.2 var(--f-mono);
+  color: var(--text);
+  white-space: nowrap;
+  box-shadow: 0 24px 40px -24px rgba(0, 0, 0, 0.95);
+  pointer-events: none;
+}
+
+.chip__dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--red-hi);
+}
+
+.chip__room {
+  color: var(--red-hi);
+}
+
+.chip--live {
+  top: 7%;
+  left: 3%;
+}
+.chip--audio {
+  top: 52%;
+  right: 3%;
+}
+.chip--room {
+  bottom: 8%;
+  left: 8%;
+}
+
+@media (min-width: 1100px) {
+  .chip--live {
+    left: -6%;
+  }
+  .chip--audio {
+    right: -8%;
+  }
+  .chip--room {
+    left: 4%;
+    bottom: -4%;
+  }
+}
+
+@media (max-width: 560px) {
+  .chip {
+    padding: 8px 10px;
+    gap: 6px;
+    border-radius: 9px;
+  }
+  .chip--audio {
+    top: auto;
+    bottom: -5%;
+    right: 3%;
+  }
+  /* Sem espaço pra três etiquetas sem cobrir o print. */
+  .chip--room {
+    display: none;
+  }
+}

@@ -2,27 +2,35 @@
 
 Página do [TelinhaFix](https://github.com/RafaellMello/telinhafix), app grátis pra Windows de compartilhar a tela com os amigos.
 
-HTML e CSS puros, sem build e sem dependência. Pra ver localmente, é só abrir o `index.html`.
+Vite + React + TypeScript, com GSAP (ScrollTrigger e SplitText) pros movimentos e Lenis pra rolagem suave.
 
-## Estrutura
+```bash
+npm install
+npm run dev      # http://localhost:5173
+npm run build    # gera dist/
+npm run lint
+```
 
-- `index.html` — a página inteira
-- `styles.css` — estilos (tokens de cor e tipografia no `:root`)
-- `img/` — prints do app em WebP, logo e `og.png` (prévia no Discord/WhatsApp)
-- `assets/` — logo original em PNG
-- `favicon.ico`, `favicon-32.png`, `apple-touch-icon.png`
+## Publicar no Vercel
+
+Importa o repositório no Vercel: ele detecta o Vite sozinho (build `npm run build`, saída `dist`). Não precisa de variável de ambiente.
+
+A `og:image` e a `og:url` precisam de endereço absoluto. No build, o `vite.config.ts` troca `__SITE_URL__` no `index.html` pelo domínio de produção do projeto no Vercel (`VERCEL_PROJECT_PRODUCTION_URL`). Fora do Vercel, usa `https://telinhafixlanding.vercel.app`.
+
+## Como a página está montada
+
+- `src/sections/Hero.tsx` carrega junto com a página. As outras seções (`Features`, `Codenames`, `Steps`, `Faq`, `Closing`) são chunks separados: o navegador baixa quando fica ocioso e cada uma só monta quando chega perto da tela (`src/components/LazySection.tsx`).
+- Links internos (`#recursos`, `#perguntas`...) passam por `src/lib/smooth-scroll.tsx`, que monta as seções que faltam antes de rolar.
+- `src/sections/Features.tsx` é o trilho lateral: no desktop fica preso na tela e anda pro lado com o scroll. No celular e com "reduzir movimento" ligado, vira uma lista normal.
+- Com "reduzir movimento" ligado no sistema, a rolagem suave, o 3D e as animações de scroll ficam desligados.
+- `src/components/HalftoneWordmarkFooter.tsx` é o rodapé com o letreiro em pontos (canvas).
 
 ## Prints que faltam
 
-Os espaços marcados com `[PRINT: …]` no HTML esperam prints reais:
+O painel "Todo mundo junto" tem um espaço marcado `[PRINT: …]` esperando um print de uma sala com 2 ou 3 amigos transmitindo ao mesmo tempo, com o controle de volume aberto. Pra trocar, substitui o `div.placeholder` em `src/sections/Features.tsx` por um `<img>` com `width`, `height`, `alt` e `loading="lazy"`, e coloca o arquivo em `public/img/`.
 
-- sala com 2 ou 3 amigos transmitindo ao mesmo tempo, com o controle de volume aberto
-- partida de Stop
-- alguém desenhando no Sketch
+## Arquivos
 
-Pra trocar, substitua o `<div class="placeholder">` por um `<img>` com `width`, `height`, `alt` e `loading="lazy"`.
-
-## Publicação
-
-Feito pra rodar no GitHub Pages (branch `main`, raiz). A `og:image` aponta pra
-`https://rafaellmello.github.io/telinhafixlanding/img/og.png`; se mudar o domínio, atualize essa URL no `index.html`.
+- `public/img/` — prints do app em WebP e o logo
+- `public/og.png` — prévia de link (Discord, WhatsApp)
+- `assets/` — logo original em PNG
